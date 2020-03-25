@@ -1,0 +1,46 @@
+BurpSuite :
+Introduction :
+Bonjour, C’est @Giiiyuuuuu de ChaigncHackademy, aujourd’hui je vous propose  un article sur BurpSuite, l’outil incontournable d’un pentest WEB.
+Ce qui peut être fait avec BurpSuite peut être fait autrement mais cet outil nous facilite la tâche car il est spécifique à l’analyse d’application web.
+
+1. Le BurpSuite :
+Avant de commencer, Qu'est que c'est déjà BurpSuite ? 
+Appelé le plus souvent seulement Burp, il s’agit d’un logiciel dédiée a l’audit de sécurité web, Grâce à ses différentes fonctionnalités configurables facilement, il est le couteau suisse d’un pentester. Ses fonctions principales sont : 
+
+1.2 Le scanner de vulnérabilités  
+Permet l’automatisation de certains tests. Lors d’un audit, un pentester n’a pas le temps suffisant pour tester de façon manuelle tous les paramètres des requêtes effectuées par un site web. Le scanner va l’aider dans cette tâche.
+
+1.3 Le proxy web.
+C’est l’outil le plus utilisé de la suite et pour cause, il se place entre l’utilisateur et les applications http ainsi  il nous permet : 
+
+1.3.1 
+De placer l’outil en mode passif, et dans ce cas un historique des requêtes émises par le site sera disponible dans l’onglet HTTP history ou Web Socket history (selon le protocole de communication).
+
+1.3.2
+D’intercepter toutes les requêtes envoyées depuis notre navigateur, de les modifier et de réceptionner la réponse du serveur et ça c’est grâce au repeater. C’est la fonction principale pour un pentester web, parce que cela permet une compréhension totale du fonctionnement du site web.
+Pour cela il va falloir configurer notre navigateur pour qu’il envoie toutes les requêtes au Burp Proxy. Personnellement je travaille exclusivement sur Firefox donc je vais vous expliquer comment configurer ce navigateur.
+Allez dans les « Paramètres » puis dans « Préférences » > « Avancés » et enfin « Réseau »
+Cliquez sur « Paramètres » et complétez le panel de configuration de la façon suivante :
+ 
+Image 
+
+Retournez sur Burp Suite, allez dans l’onglet « Proxy » et assurez-vous que le proxy est configuré pour intercepter les requêtes :
+(Intercept is  on  Intercept is off). 
+ 
+Image
+
+1.4 Le Repeater
+Burp Repeater c’est clairement là où vous passeriez le plus de temps. Par défaut il n’y a rien dans cet onglet et c'est tout à fait normal puisque c’est à vous de dire quelle requête vous voulez envoyer dans le repeater. 
+Pour cela choisissez une requête dans le proxy, cliquez sur « Action » puis « Send to Repeater » Après ça Vous allez sur la fenêtre Repeater et vous cliquez sur « Send », ainsi la requête est envoyée.… Tadaa, Vous pouvez modifier la requête si vous le souhaite à partir de ça vous avez les outils de base pour faire de l’interception HTTP.
+  
+ Image 
+ 
+1.5 L’intruder, l’outil d’intrusion
+L’intruder de Burp est un module permettant le scan des requêtes avec des payloads personnalisées. Contrairement au scanner, l’intruder n’a pas de listes de payloads prédéfinies. C’est au pentester de renseigner une liste de payloads, ce qui permet de spécifier les paramètres à scanner et les tests à réaliser.
+Ce module est utilisé pour les attaques par brute force, les énumérations d’objets ou encore les contournements de filtres. En effet, il est possible de fournir une liste de payloads spécifiques en fonction de la vulnérabilité ciblée.  
+
+2. Conclusion :
+Burp Suite n’est pas le seul logiciel à proposer les fonctionnalités de scanner de vulnérabilité et proxy web. En effet, l’outil ZAP développé par l’OWASP ou encore VEGA proposent les mêmes fonctionnalités. Cependant, par sa modularité avec ses extensions, son ergonomie et sa communauté active (qui développe de nouvelles extensions et créée de la documentation détaillée sur les modules), Burp est devenu un outil de référence dans sa catégorie.
+
+
+
